@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>All Notes</title>
+	<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+	<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+    	.row.heading h2 {
+		    color: #fff;
+		    font-size: 52.52px;
+		    line-height: 95px;
+		    font-weight: 400;
+		    text-align: center;
+		    margin: 0 0 40px;
+		    padding-bottom: 20px;
+		    text-transform: uppercase;
+		}
+		.heading.heading-icon {
+		    display: block;
+		}
+    .col-sm-10 input{
+      position: absolute;
+      left: 100px;
+    }
+    .col-sm-10 textarea{
+      position: absolute;
+      left: 100px;
+      top:50px; 
+    }
+    .col-sm-10 button{
+      position: absolute;
+      left: 100px;
+      top:320px; 
+      width:1140px;
+    }
+    .navbar.navbar-light.bg-light{
+      position:absolute;
+      top:0px;
+      width:1370px;
+      height:25px;
+    }
+    .navbar.navbar-light.bg-light a{
+      position:absolute;
+      top:1px;
+    }
+    ul{
+  margin:0;
+  padding:0;
+  list-style:none;
+}
+.heading.heading-icon {
+    display: block;
+}
+.padding-lg {
+  display: block;
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+}
+.main-stuff .cnt-block:hover {
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.3);
+    border: 0;
+}
+
+.main-stuff{
+  background-color: #0E0E20;
+  
+}
+.main-stuff .cnt-block{ 
+   float:left; 
+   width:100%; 
+   background:#fff; 
+   padding:30px 20px; 
+   text-align:center; 
+   border:2px solid #d5d5d5;
+   margin: 0 0 28px;
+}
+.main-stuff .cnt-block figure{
+   width:148px; 
+   height:148px; 
+   border-radius:100%; 
+   display:inline-block;
+   margin-bottom: 15px;
+}
+.main-stuff .cnt-block img{ 
+   width:148px; 
+   height:148px; 
+   border-radius:100%; 
+}
+.main-stuff .cnt-block h3{ 
+   color:#2a2a2a; 
+   font-size:20px; 
+   font-weight:500; 
+   padding:6px 0;
+   text-transform:uppercase;
+}
+.main-stuff .cnt-block h3 a{
+  text-decoration:none;
+  color:#2a2a2a;
+}
+.main-stuff .cnt-block h3 a:hover{
+  color:#337ab7;
+}
+.main-stuff .cnt-block p{ 
+   color:#2a2a2a; 
+   font-size:13px; 
+   line-height:20px; 
+   font-weight:400;
+}
+    </style>
+</head>
+<body>
+	<section class="main-stuff padding-lg">
+  <div class="container">
+    <div class="row heading heading-icon">
+        <h2>SAVED NOTES</h2>
+    </div>
+    <ul class="row">
+    	{% for note in notes %}
+    	    <li class="col-12 col-md-6 col-lg-3">
+          <div class="cnt-block equal-hight" style="height: 349px;">
+            <h2>{{ note.title }}</h2>
+            <ul class="description clearfix">
+              <li>{{ note.content }}</li>
+            </ul>
+          </div>
+      </li>
+        {% endfor %}
+  </ul>
+</div>
+</section>
+</body>
+</html>
